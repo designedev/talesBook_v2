@@ -1,0 +1,18 @@
+development:
+  cloud_name: dd5oaoj8c
+  api_key: '513352766825744'
+  api_secret: QXGbgDei66p7ZRVncE9iBbp8m7w
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dd5oaoj8c
+  api_key: '513352766825744'
+  api_secret: QXGbgDei66p7ZRVncE9iBbp8m7w
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dd5oaoj8c
+  api_key: '513352766825744'
+  api_secret: QXGbgDei66p7ZRVncE9iBbp8m7w
+  enhance_image_tag: true
+  static_image_support: false
