@@ -3248,3 +3248,108 @@ Processing by ItemsController#find_by_name as HTML
 Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-06-19 01:50:36 +0900
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/items/name/%EC%95%84%EB%8B%88%EB%A7%88/1" for 127.0.0.1 at 2017-06-19 01:50:42 +0900
+Processing by ItemsController#find_by_name as HTML
+Started GET "/api/items/name/count/%EC%95%84%EB%8B%88%EB%A7%88" for 127.0.0.1 at 2017-06-19 01:50:43 +0900
+  Parameters: {"NAME"=>"아니마", "PAGE"=>"1"}
+Processing by ItemsController#find_by_name_count as HTML
+  Parameters: {"NAME"=>"아니마"}
+  [1m[36mItem Load (3.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE (NAME like '%아니마%') ORDER BY ID ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[35m (43.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE (NAME like '%아니마%')[0m
+Completed 200 OK in 121ms (Views: 0.3ms | ActiveRecord: 44.6ms)
+
+
+Completed 200 OK in 128ms (Views: 1.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 01:50:57 +0900
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/items/name/%EC%95%84%EB%8B%88%EB%A7%88/1" for 127.0.0.1 at 2017-06-19 01:51:00 +0900
+Processing by ItemsController#find_by_name as HTML
+  Parameters: {"NAME"=>"아니마", "PAGE"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE (NAME like '%아니마%') ORDER BY ID ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/items/name/count/%EC%95%84%EB%8B%88%EB%A7%88" for 127.0.0.1 at 2017-06-19 01:51:00 +0900
+Processing by ItemsController#find_by_name_count as HTML
+  Parameters: {"NAME"=>"아니마"}
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE (NAME like '%아니마%')[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 01:51:59 +0900
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 01:52:08 +0900
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 01:52:10 +0900
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 01:53:23 +0900
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 01:53:42 +0900
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/items/name/dksoa/1" for 127.0.0.1 at 2017-06-19 01:53:56 +0900
+Processing by ItemsController#find_by_name as HTML
+Started GET "/api/items/name/count/dksoa" for 127.0.0.1 at 2017-06-19 01:53:56 +0900
+  Parameters: {"NAME"=>"dksoa", "PAGE"=>"1"}
+Processing by ItemsController#find_by_name_count as HTML
+  [1m[36mItem Load (1.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE (NAME like '%dksoa%') ORDER BY ID ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Parameters: {"NAME"=>"dksoa"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE (NAME like '%dksoa%')[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/items/name/%EC%95%84%EB%8B%88%EB%A7%88/1" for 127.0.0.1 at 2017-06-19 01:53:59 +0900
+Started GET "/api/items/name/count/%EC%95%84%EB%8B%88%EB%A7%88" for 127.0.0.1 at 2017-06-19 01:53:59 +0900
+Processing by ItemsController#find_by_name as HTML
+  Parameters: {"NAME"=>"아니마", "PAGE"=>"1"}
+Processing by ItemsController#find_by_name_count as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE (NAME like '%아니마%') ORDER BY ID ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Parameters: {"NAME"=>"아니마"}
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE (NAME like '%아니마%')[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+

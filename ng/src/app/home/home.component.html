@@ -21,7 +21,7 @@
     </div>
     <button (click)="getItemsByName()" class="btn btn-default">검색</button>
   </form>
-  <h4 *ngIf="items">{{items.length}} / {{itemsFullSize}}</h4>
+  <h4 *ngIf="items">'{{searchValue}}' 검색어에 대해 총 {{itemsFullSize}}개의 결과를 검색했습니다.</h4>
   <div class="table-responsive" style="padding: 15px 15px 15px;border-color: #2b86c3;border-style: solid;border-width: 1px;border-radius: 4px 4px 4px 4px; margin-top: 20px;">
     <table class="table table-hover">
       <thead>
@@ -77,6 +77,6 @@
         style="width:80%; display: block; margin: 0 auto;"><span class="glyphicon glyphicon-align-left"></span> 더 보기 <span class="badge">{{itemsFullSize - items.length}}개가 더 있어요</span></button>
     </div>
   </div>
-  <h1>Mistral, 미구엘 레아르</h1>
+  <div class="alert alert-info" style="margin-top: 5px;" role="alert">Mistral, 미구엘 레아르 in LUNARS All rights reserved.</div>
 </div>
 <div class="col-md-1"></div>
