@@ -70,7 +70,7 @@ AppModule = __decorate([
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<span *ngIf=\"items\">{{items.length}}</span>\n<span *ngIf=\"num\">\n</span>-->\n<style>\n  table,\n  th,\n  td {\n    text-align: center;\n    vertical-align: middle !important;\n  }\n  h1 {margin-bottom: 0px important!}\n</style>\n<div class=\"col-md-1\"></div>\n<div class=\"col-md-10\">\n  <h1>TALESBOOK V2\n    <img src=\"http://res.cloudinary.com/dd5oaoj8c/image/upload/e_trim/h_39/v1497192738/drq250r5oxd5xqptx5si.png\"/>\n  </h1>\n  <span class=\"label label-primary\">IP ADDRESS : {{ipAddress || \"체킹\"}}</span>\n  <span class=\"label\" [class.label-primary]=\"ping  < avg_ping * 1.3\" [class.label-danger]=\"ping  > avg_ping * 1.3\" >현재 핑 : {{ping | number:'1.0-0'}}</span>\n  <span class=\"label label-default\">평균 핑 : {{avg_ping | number:'1.0-0'}}</span>\n  <span class=\"label label-default\">핑이 튄 횟수 : {{bad_ping_count | number:'1.0-0'}}</span>\n  * 핑은 상대적인 값이고, 참고용으로만 확인하세요.\n  <form class=\"form-inline\" style=\"margin-top: 10px;\">\n    <div class=\"form-group\">\n      <label for=\"name\">검색어</label>\n      <input type=\"text\" class=\"form-control\" name=\"name\" id=\"name\" [(ngModel)]=\"name\" placeholder=\"아이템 이름\">\n    </div>\n    <button (click)=\"getItemsByName()\" class=\"btn btn-default\">검색</button>\n  </form>\n  <h4 *ngIf=\"items\">'{{searchValue}}' 검색어에 대해 총 {{itemsFullSize}}개의 결과를 검색했습니다.</h4>\n  <div class=\"table-responsive\" style=\"padding: 15px 15px 15px;border-color: #2b86c3;border-style: solid;border-width: 1px;border-radius: 4px 4px 4px 4px; margin-top: 20px;\">\n    <table class=\"table table-hover\">\n      <thead>\n        <tr>\n          <th>#</th>\n          <th>이름(타입)</th>\n          <th>요구능력치</th>\n          <th>찌르기</th>\n          <th>베기</th>\n          <th>물리방어</th>\n          <th>마법공격</th>\n          <th>마법방어</th>\n          <th>명중</th>\n          <th>회피</th>\n          <th>민첩</th>\n          <th>크리티컬</th>\n          <th>딜레이</th>\n          <th>합성횟수</th>\n          <th>이미지</th>\n        </tr>\n      </thead>\n      <tbody *ngIf=\"!items || items.length == 0\">\n        <tr *ngIf=\"!items\">\n          <td colspan=\"15\" style=\"text-align: center\">검색해 봅시다.</td>\n        </tr>\n        <tr *ngIf=\"items && items.length == 0\" style=\"text-align: center\">\n          <td colspan=\"15\" style=\"text-align: center\">결과가 없습니다.</td>\n        </tr>\n      </tbody>\n      <tbody *ngIf=\"items\">\n        <tr *ngFor=\"let item of items; let idx = index;\">\n          <th scope=\"row\">{{idx+1}}</th>\n          <td>{{item.NAME}}<br/>({{item.TYPE}})</td>\n          <td>{{item.REQUIREMENT}}</td>\n          <td>{{item.STAB}}</td>\n          <td>{{item.HACK}}</td>\n          <td>{{item.DEFENCE}}</td>\n          <td>{{item.MATTACK}}</td>\n          <td>{{item.MDEFENCE}}</td>\n          <td>{{item.ACCURACY}}</td>\n          <td>{{item.AGILITY}}</td>\n          <td>{{item.DEXTERITY}}</td>\n          <td>{{item.CRITICAL}}</td>\n          <td>{{item.DELAY}}</td>\n          <td>{{item.COMPOSE}}</td>\n          <td><img height=\"70px\" [src]=\"item.IMAGE_TRIMMED()\" /></td>\n        </tr>\n      </tbody>\n    </table>\n\n    <div>\n      <button *ngIf=\"items && items.length < itemsFullSize\" (click)=\"getMoreItemsByName()\" class=\"btn btn-primary btn-default\"\n        style=\"width:80%; display: block; margin: 0 auto;\"><span class=\"glyphicon glyphicon-align-left\"></span> 더 보기 <span class=\"badge\">{{itemsFullSize - items.length}}개가 더 있어요</span></button>\n    </div>\n  </div>\n  <div class=\"alert alert-info\" style=\"margin-top: 5px;\" role=\"alert\">Mistral, 미구엘 레아르 in LUNARS All rights reserved.</div>\n</div>\n<div class=\"col-md-1\"></div>"
+module.exports = "<!--<span *ngIf=\"items\">{{items.length}}</span>\n<span *ngIf=\"num\">\n</span>-->\n<style>\n  table,\n  th,\n  td {\n    text-align: center;\n    vertical-align: middle !important;\n  }\n  h1 {margin-bottom: 0px important!}\n</style>\n<div class=\"col-md-1\"></div>\n<div class=\"col-md-10\">\n  <h1>TALESBOOK V2\n    <img src=\"http://res.cloudinary.com/dd5oaoj8c/image/upload/e_trim/h_39/v1497192738/drq250r5oxd5xqptx5si.png\"/>\n  </h1>\n  <span class=\"label label-primary\">IP ADDRESS : {{ipAddress || \"체킹\"}}</span>\n  <span class=\"label\" [class.label-primary]=\"ping  < avg_ping * 1.3\" [class.label-danger]=\"ping  > avg_ping * 1.3\" >현재 핑 : {{ping | number:'1.0-0'}}</span>\n  <span class=\"label label-default\">평균 핑 : {{avg_ping | number:'1.0-0'}}</span>\n  <span class=\"label label-default\">핑이 튄 횟수 : {{bad_ping_count | number:'1.0-0'}}</span>\n  * 핑은 상대적인 값이고, 참고용으로만 확인하세요.\n  <form class=\"form-inline\" style=\"margin-top: 10px;\">\n    <div class=\"form-group\">\n      <label for=\"name\">검색어</label>\n      <input type=\"text\" class=\"form-control\" name=\"name\" id=\"name\" [(ngModel)]=\"name\" placeholder=\"아이템 이름\">\n      <label for=\"type\" style=\"margin-left: 10px;\">타입</label>\n      <select *ngIf=\"types\" [(ngModel)]=\"type\" name=\"type\" id=\"type\" class=\"form-control\">\n          <option value=\"ALL\" selected=\"selected\">전체</option>\n          <option *ngFor=\"let type of types\" [value]=\"type\">{{type}}</option>\n      </select>\n    </div>\n    <button (click)=\"getItemsByName()\" class=\"btn btn-default\">검색</button>\n  </form>\n  <h4 *ngIf=\"items\">'{{searchType == \"ALL\" ? \"전체\" : searchType}} 타입','{{searchValue}}' 검색어에 대해 총 {{itemsFullSize}}개의 결과를 검색했습니다.</h4>\n  <div class=\"table-responsive\" style=\"padding: 15px 15px 15px;border-color: #2b86c3;border-style: solid;border-width: 1px;border-radius: 4px 4px 4px 4px; margin-top: 20px;\">\n    <table class=\"table table-hover\">\n      <thead>\n        <tr>\n          <th>#</th>\n          <th>이름(타입)</th>\n          <th>요구능력치</th>\n          <th>찌르기</th>\n          <th>베기</th>\n          <th>물리방어</th>\n          <th>마법공격</th>\n          <th>마법방어</th>\n          <th>명중</th>\n          <th>회피</th>\n          <th>민첩</th>\n          <th>크리티컬</th>\n          <th>딜레이</th>\n          <th>합성횟수</th>\n          <th>이미지</th>\n        </tr>\n      </thead>\n      <tbody *ngIf=\"!items || items.length == 0\">\n        <tr *ngIf=\"!items\">\n          <td colspan=\"15\" style=\"text-align: center\">검색해 봅시다.</td>\n        </tr>\n        <tr *ngIf=\"items && items.length == 0\" style=\"text-align: center\">\n          <td colspan=\"15\" style=\"text-align: center\">결과가 없습니다.</td>\n        </tr>\n      </tbody>\n      <tbody *ngIf=\"items\">\n        <tr *ngFor=\"let item of items; let idx = index;\">\n          <th scope=\"row\">{{idx+1}}</th>\n          <td>{{item.NAME}}<br/>({{item.TYPE}})</td>\n          <td>{{item.REQUIREMENT}}</td>\n          <td>{{item.STAB}}</td>\n          <td>{{item.HACK}}</td>\n          <td>{{item.DEFENCE}}</td>\n          <td>{{item.MATTACK}}</td>\n          <td>{{item.MDEFENCE}}</td>\n          <td>{{item.ACCURACY}}</td>\n          <td>{{item.AGILITY}}</td>\n          <td>{{item.DEXTERITY}}</td>\n          <td>{{item.CRITICAL}}</td>\n          <td>{{item.DELAY}}</td>\n          <td>{{item.COMPOSE}}</td>\n          <td><img height=\"70px\" [src]=\"item.IMAGE_TRIMMED()\" /></td>\n        </tr>\n      </tbody>\n    </table>\n\n    <div>\n      <button *ngIf=\"items && items.length < itemsFullSize\" (click)=\"getMoreItemsByName()\" class=\"btn btn-primary btn-default\"\n        style=\"width:80%; display: block; margin: 0 auto;\"><span class=\"glyphicon glyphicon-align-left\"></span> 더 보기 <span class=\"badge\">{{itemsFullSize - items.length}}개가 더 있어요</span></button>\n    </div>\n  </div>\n  <div class=\"alert alert-info\" style=\"margin-top: 5px;\" role=\"alert\">Mistral, 미구엘 레아르 in LUNARS All rights reserved.</div>\n</div>\n<div class=\"col-md-1\"></div>"
 
 /***/ }),
 
@@ -117,42 +117,46 @@ var HomeComponent = (function () {
         this.pingService.ipStream.subscribe(function (ip) { return _this.ipAddress = ip; });
     }
     HomeComponent.prototype.ngOnInit = function () {
-    };
-    HomeComponent.prototype.getItemsByType = function () {
         var _this = this;
-        if (this.type) {
-            this.searchValue = this.type;
-            this.currentPage = 1;
-            this.itemService.getItemsByType(this.searchValue, this.currentPage).then(function (items) {
-                _this.items = items;
-                console.log(_this.items.length);
-            });
-            this.itemService.getItemsByTypeCount(this.searchValue).then(function (fullSize) { return _this.itemsFullSize = fullSize; });
-        }
-        else {
-            console.log("item type is empty..");
-        }
+        this.type = "ALL";
+        this.itemService.getItemType().then(function (types) {
+            _this.types = types;
+        });
     };
-    HomeComponent.prototype.getMoreItemsByType = function () {
-        var _this = this;
-        if (this.items && this.items.length < this.itemsFullSize) {
-            this.currentPage++;
-            this.itemService.getItemsByType(this.searchValue, this.currentPage).then(function (items) {
-                _this.items.concat(items);
-                console.log(_this.items.length);
-            });
-        }
-    };
+    // getItemsByType() {
+    //   if(this.type) {
+    //     this.searchValue = this.type;
+    //     this.currentPage = 1;
+    //     this.itemService.getItemsByType(this.searchValue, this.currentPage).then(items => {
+    //       this.items = items;
+    //       console.log(this.items.length);
+    //     });
+    //     this.itemService.getItemsByTypeCount(this.searchValue).then(fullSize => this.itemsFullSize = fullSize);
+    //   }
+    //   else {
+    //     console.log("item type is empty..");
+    //   }
+    // }
+    // getMoreItemsByType() {
+    //   if(this.items && this.items.length < this.itemsFullSize) {
+    //     this.currentPage++;
+    //     this.itemService.getItemsByType(this.searchValue, this.currentPage).then(items => {
+    //       this.items.concat(items);
+    //       console.log(this.items.length);
+    //     });
+    //   }
+    // }
     HomeComponent.prototype.getItemsByName = function () {
         var _this = this;
         if (this.name) {
             this.searchValue = this.name;
+            this.searchType = this.type;
             this.currentPage = 1;
-            this.itemService.getItemsByName(this.searchValue, this.currentPage).then(function (items) {
+            this.itemService.getItemsByName(this.searchValue, this.searchType, this.currentPage).then(function (items) {
                 _this.items = items;
                 console.log(_this.items.length);
             });
-            this.itemService.getItemsByNameCount(this.searchValue).then(function (fullSize) { return _this.itemsFullSize = fullSize; });
+            this.itemService.getItemsByNameCount(this.searchValue, this.searchType).then(function (fullSize) { return _this.itemsFullSize = fullSize; });
         }
         else {
             console.log("item type is empty..");
@@ -162,7 +166,7 @@ var HomeComponent = (function () {
         var _this = this;
         if (this.items && this.items.length < this.itemsFullSize) {
             this.currentPage++;
-            this.itemService.getItemsByName(this.searchValue, this.currentPage).then(function (items) {
+            this.itemService.getItemsByName(this.searchValue, this.searchType, this.currentPage).then(function (items) {
                 (_a = _this.items).push.apply(_a, items);
                 console.log(_this.items.length);
                 var _a;
@@ -249,6 +253,7 @@ var ItemService = (function () {
         this.api_url_type_count = '/api/items/type/count/';
         this.api_url_name = '/api/items/name/';
         this.api_url_name_count = '/api/items/name/count/';
+        this.api_url_item_type = '/api/items/types';
     }
     ItemService.prototype.getItemsByType = function (type, page) {
         return this.http.get(this.api_url_type + type + "/" + page).toPromise().then(function (r) { return r.json().data.map(function (json) { return __WEBPACK_IMPORTED_MODULE_5__home_item__["a" /* Item */].fromJSON(json); }); });
@@ -256,11 +261,14 @@ var ItemService = (function () {
     ItemService.prototype.getItemsByTypeCount = function (type) {
         return this.http.get(this.api_url_type_count + type).toPromise().then(function (r) { return r.json().count; });
     };
-    ItemService.prototype.getItemsByName = function (type, page) {
-        return this.http.get(this.api_url_name + type + "/" + page).toPromise().then(function (r) { return r.json().data.map(function (json) { return __WEBPACK_IMPORTED_MODULE_5__home_item__["a" /* Item */].fromJSON(json); }); });
+    ItemService.prototype.getItemsByName = function (name, type, page) {
+        return this.http.get(this.api_url_name + type + "/" + name + "/" + page).toPromise().then(function (r) { return r.json().data.map(function (json) { return __WEBPACK_IMPORTED_MODULE_5__home_item__["a" /* Item */].fromJSON(json); }); });
     };
-    ItemService.prototype.getItemsByNameCount = function (type) {
-        return this.http.get(this.api_url_name_count + type).toPromise().then(function (r) { return r.json().count; });
+    ItemService.prototype.getItemsByNameCount = function (name, type) {
+        return this.http.get(this.api_url_name_count + type + "/" + name).toPromise().then(function (r) { return r.json().count; });
+    };
+    ItemService.prototype.getItemType = function () {
+        return this.http.get(this.api_url_item_type).toPromise().then(function (r) { return r.json().types; });
     };
     return ItemService;
 }());

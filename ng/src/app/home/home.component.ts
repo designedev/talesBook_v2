@@ -41,44 +41,51 @@ export class HomeComponent implements OnInit {
   currentPage: number;
   itemsFullSize: number;
 
+  types: string[];
+
   ngOnInit() {
+    this.type = "ALL"
+    this.itemService.getItemType().then(types => {
+      this.types = types
+    });
   }
 
 
-  getItemsByType() {
-    if(this.type) {
-      this.searchValue = this.type;
-      this.currentPage = 1;
-      this.itemService.getItemsByType(this.searchValue, this.currentPage).then(items => {
-        this.items = items;
-        console.log(this.items.length);
-      });
-      this.itemService.getItemsByTypeCount(this.searchValue).then(fullSize => this.itemsFullSize = fullSize);
-    }
-    else {
-      console.log("item type is empty..");
-    }
-  }
+  // getItemsByType() {
+  //   if(this.type) {
+  //     this.searchValue = this.type;
+  //     this.currentPage = 1;
+  //     this.itemService.getItemsByType(this.searchValue, this.currentPage).then(items => {
+  //       this.items = items;
+  //       console.log(this.items.length);
+  //     });
+  //     this.itemService.getItemsByTypeCount(this.searchValue).then(fullSize => this.itemsFullSize = fullSize);
+  //   }
+  //   else {
+  //     console.log("item type is empty..");
+  //   }
+  // }
 
-  getMoreItemsByType() {
-    if(this.items && this.items.length < this.itemsFullSize) {
-      this.currentPage++;
-      this.itemService.getItemsByType(this.searchValue, this.currentPage).then(items => {
-        this.items.concat(items);
-        console.log(this.items.length);
-      });
-    }
-  }
+  // getMoreItemsByType() {
+  //   if(this.items && this.items.length < this.itemsFullSize) {
+  //     this.currentPage++;
+  //     this.itemService.getItemsByType(this.searchValue, this.currentPage).then(items => {
+  //       this.items.concat(items);
+  //       console.log(this.items.length);
+  //     });
+  //   }
+  // }
 
   getItemsByName() {
     if(this.name) {
       this.searchValue = this.name;
+      this.searchType = this.type;
       this.currentPage = 1;
-      this.itemService.getItemsByName(this.searchValue, this.currentPage).then(items => {
+      this.itemService.getItemsByName(this.searchValue, this.searchType, this.currentPage).then(items => {
         this.items = items;
         console.log(this.items.length);
       });
-      this.itemService.getItemsByNameCount(this.searchValue).then(fullSize => this.itemsFullSize = fullSize);
+      this.itemService.getItemsByNameCount(this.searchValue, this.searchType).then(fullSize => this.itemsFullSize = fullSize);
     }
     else {
       console.log("item type is empty..");
@@ -88,7 +95,7 @@ export class HomeComponent implements OnInit {
   getMoreItemsByName() {
     if(this.items && this.items.length < this.itemsFullSize) {
       this.currentPage++;
-      this.itemService.getItemsByName(this.searchValue, this.currentPage).then(items => {
+      this.itemService.getItemsByName(this.searchValue, this.searchType, this.currentPage).then(items => {
         this.items.push(...items);
         console.log(this.items.length);
       });

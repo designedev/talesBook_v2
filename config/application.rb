@@ -19,5 +19,8 @@ Bundler.require(*Rails.groups)
 module TalesBookV2
   class Application < Rails::Application
     config.assets.paths << Rails.root.join('./ng/node_modules')
+    config.action_controller.perform_caching = true
+    config.cache_store = :memory_store, { size: 8.megabytes }
+
   end
 end
