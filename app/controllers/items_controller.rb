@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
         puts type
         items = Item.where("NAME like ?", "%#{name}%")
         items = items.where(TYPE: type) if type != "ALL"
-        items.order("ID ASC").limit(PAGE_SIZE).offset((page.to_i - 1) * PAGE_SIZE)
+        items = items.order("ID ASC").limit(PAGE_SIZE).offset((page.to_i - 1) * PAGE_SIZE)
         render json: {:data => items.as_json}
     end
 
